@@ -10,6 +10,7 @@ A handy linear algebra toolbox for Java. Useful for 2d physics, graphics, games 
 This library is a still unfinished port of my [Chicken Scheme](http://www.call-cc.org/) _egg_ [2d-primitives](https://github.com/pluizer/2d-primitives). 
 All features provided by 2d-primitives will be available in Math-2d in due time. At the time it provides support for the following:
 
+- Angles
 - Vectors
 - Circles
 - Triangles

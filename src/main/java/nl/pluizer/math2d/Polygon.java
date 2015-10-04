@@ -97,6 +97,10 @@ public class Polygon {
         return new Polygon(result);
     }
 
+    /**
+     * Returns the vectors that make up this polygon.
+     * @return              the vectors that make up this polygon
+     */
     public List<Vector> getVectors() {
         return vectors;
     }

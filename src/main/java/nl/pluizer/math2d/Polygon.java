@@ -30,7 +30,7 @@ public class Polygon {
 
     /**
      * Creates a new polygon from a list of vectors.
-     * @param vectors       the list of vector to make to polyon
+     * @param vectors       the list of vector to make to polygon
      *                      out of
      */
     public Polygon(List<Vector> vectors) {

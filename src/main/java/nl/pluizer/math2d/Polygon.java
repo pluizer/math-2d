@@ -102,6 +102,60 @@ public class Polygon {
     }
 
     /**
+     * Adds a vector to a polygon and returns the result.
+     * @param vector        the vector to add
+     * @return              a new polygon as the result
+     */
+    public Polygon add(Vector vector) {
+        List<Vector> result = new ArrayList<>(vectors);
+        result.forEach((v) -> v.add(vector));
+        return new Polygon(result);
+    }
+
+    /**
+     * Subtracts a vector to a polygon and returns the result.
+     * @param vector        the vector to subtract
+     * @return              a new polygon as the result
+     */
+    public Polygon subtract(Vector vector) {
+        List<Vector> result = new ArrayList<>(vectors);
+        result.forEach((v) -> v.subtract(vector));
+        return new Polygon(result);
+    }
+
+    /**
+     * Rotates a polygon a certain angle around a point of
+     * origin (pivot).
+     * @param angle         the angle to rotate the polygon
+     * @param origin        the point of origin of the polygon
+     * @return              a new rotated polygon
+     */
+    public Polygon rotate(Angle angle, Vector origin) {
+        double cA = Math.cos(angle.getRadian());
+        double sA = Math.sin(angle.getRadian());
+        double oX = origin.getX();
+        double oY = origin.getY();
+        List<Vector> result = new ArrayList<>(vectors);
+        for (Vector v : vectors) {
+            double x = v.getX(), y = v.getY();
+            result.add(new Vector(
+                    ((x - oX) * cA) - ((y - oY) * sA),
+                    ((x - oX) * sA) + ((y - oY) * cA)
+            ));
+        }
+        return new Polygon(result);
+    }
+
+    /**
+     * Rotates a polygon a certain angle.
+     * @param angle         the angle to rotate the polygon
+     * @return              a new rotated polygon
+     */
+    public Polygon rotate(Angle angle) {
+        return rotate(angle, new Vector());
+    }
+
+    /**
      * Returns the vectors that make up this polygon.
      * @return              the vectors that make up this polygon
      */

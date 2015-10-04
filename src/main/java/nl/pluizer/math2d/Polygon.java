@@ -67,9 +67,11 @@ public class Polygon {
                 return 1;
             }
         });
-
+        // Process the lower part ...
         List<Vector> lower = new ArrayList<>();
         sortedVectors.forEach((v) -> {
+            // Remove the last vector, if the triangle from the last
+            // two and the current vector are clockwise.
             while (lower.size() >= 2 &&
                     new Triangle(v, lower.get(lower.size() - 2),
                             lower.get(lower.size() - 1)).clockwise()) {
@@ -77,11 +79,13 @@ public class Polygon {
             }
             lower.add(v);
         });
-
+        // Process the upper part ...
         List<Vector> reverseSorted = new ArrayList<>(sortedVectors);
         Collections.reverse(reverseSorted);
         Stack<Vector> upper = new Stack<>();
         reverseSorted.forEach((v) -> {
+            // Remove the last vector, if the triangle from the last
+            // two and the current vector are clockwise.
             while (upper.size() >= 2 &&
                     new Triangle(v, upper.get(upper.size()-2),
                             upper.get(upper.size()-1)).clockwise()) {
@@ -89,7 +93,7 @@ public class Polygon {
             }
             upper.add(v);
         });
-
+        // Combine the results, minus the duplicate ones.
         lower.remove(lower.size() - 1);
         upper.remove(upper.size() - 1);
         List<Vector> result = new ArrayList<>(lower);

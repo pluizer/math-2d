@@ -1,4 +1,4 @@
-import com.sun.istack.internal.NotNull;
+package nl.pluizer.math2d;
 
 /**
  * This class provides a universal way of working with angles whether they
@@ -16,27 +16,27 @@ public class Angle implements Comparable<Angle>{
     }
 
     /**
-     * Creates a new Angle by specifying the angle in radians.
+     * Creates a new nl.pluizer.math2d.Angle by specifying the angle in radians.
      * @param radian    the angle in radians
-     * @return          a new Angle object
+     * @return          a new nl.pluizer.math2d.Angle object
      */
     public static Angle fromRadian(double radian) {
         return new Angle(radian);
     }
 
     /**
-     * Creates a new Angle by specifying the angle in degrees.
+     * Creates a new nl.pluizer.math2d.Angle by specifying the angle in degrees.
      * @param degree    the angle in degrees
-     * @return          a new Angle object
+     * @return          a new nl.pluizer.math2d.Angle object
      */
     public static Angle fromDegree(double degree) {
         return new Angle(degree * (Math.PI / 180));
     }
 
     /**
-     * Creates a new Angle converted from a Vector.
+     * Creates a new nl.pluizer.math2d.Angle converted from a nl.pluizer.math2d.Vector.
      * @param vector    the vector to convert to an angle
-     * @return          a new Angle object
+     * @return          a new nl.pluizer.math2d.Angle object
      */
     public static Angle fromVector(Vector vector) {
         return fromRadian(Math.atan2(vector.getY(), vector.getX()));

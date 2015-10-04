@@ -1,3 +1,10 @@
+package nl.pluizer.math2d;
+
+/**
+ * The Circle class is used to define a circle.
+ *
+ * @author Richard van Roy
+ */
 public class Circle {
 
     private Vector centre;

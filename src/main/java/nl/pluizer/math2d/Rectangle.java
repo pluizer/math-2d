@@ -1,7 +1,15 @@
+package nl.pluizer.math2d;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * The Rectangle class provides many immutable operations for
+ * working with rectangles.
+ *
+ * @author Richard van Roy
+ */
 public class Rectangle {
 
     private double left, right, bottom, top;
@@ -54,7 +62,7 @@ public class Rectangle {
      * Returns a rectangle that bounds over (can contain) all
      * vectors in the list.
      * @param vectors       the list of vectors to contain
-     * @return              a new Rectangle that contains those vectors
+     * @return              a new nl.pluizer.math2d.Rectangle that contains those vectors
      */
     static Rectangle contain(List<Vector> vectors) {
         if (vectors.size() <= 2) {
@@ -211,6 +219,7 @@ public class Rectangle {
      * @param v1            start of the line
      * @param v2            end of the line
      * @return              fraction along the segment query
+     *                      or Double.POSITIVE_INFINITY
      */
     public double segmentQuery(Vector v1, Vector v2) {
         double xA = v1.getX(), xB = v2.getX();

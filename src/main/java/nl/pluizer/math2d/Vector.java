@@ -1,3 +1,11 @@
+package nl.pluizer.math2d;
+
+/**
+ * The Vector class provides many immutable operations for
+ * working with vectors.
+ *
+ * @author Richard van Roy
+ */
 public class Vector implements Comparable<Vector> {
 
     private double x, y;

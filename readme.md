@@ -17,4 +17,4 @@ All features provided by 2d-primitives will be available in Math-2d in due time.
 - Triangles
 - Rectangles
 
- Be sure to check out the [documentation](https://freeshell.de/~pluizer/javadoc/nl/pluizer/math2d/package-summary.html) for more information.
+Be sure to check out the [documentation](https://freeshell.de/~pluizer/javadoc/nl/pluizer/math2d/package-summary.html) for more information.

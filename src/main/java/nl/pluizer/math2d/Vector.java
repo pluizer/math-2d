@@ -249,4 +249,9 @@ public class Vector implements Comparable<Vector> {
     public double distance(Vector other) {
         return subtract(other).length();
     }
+
+    @Override
+    public String toString() {
+        return "(" + getX() + ", " + getY() + ")";
+    }
 }

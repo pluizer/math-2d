@@ -5,7 +5,7 @@ package nl.pluizer.math2d;
  *
  * @author Richard van Roy
  */
-public class Circle {
+public class Circle implements Shape {
 
     private Vector centre;
 
@@ -39,10 +39,28 @@ public class Circle {
     }
 
     /**
-     * Teturns the radius of this circle
+     * Returns the radius of this circle
      * @return              the radius of this circle.
      */
     public double getRadius() {
         return radius;
+    }
+
+    /**
+     * Returns the total width of this circle.
+     * @return              the width of this circle
+     */
+    @Override
+    public double getWidth() {
+        return radius*2;
+    }
+
+    /**
+     * Returns the total width of this circle.
+     * @return              the width of this circle
+     */
+    @Override
+    public double getHeight() {
+        return radius*2;
     }
 }

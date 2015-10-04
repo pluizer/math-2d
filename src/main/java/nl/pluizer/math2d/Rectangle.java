@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Richard van Roy
  */
-public class Rectangle {
+public class Rectangle implements Shape {
 
     private double left, right, bottom, top;
 
@@ -53,9 +53,22 @@ public class Rectangle {
      * Creates a rectangle that encapsulates a circle.
      * @param circle        the circle to encapsulate
      */
-    public Rectangle(Circle circle) {
-        this(circle.getCentre().subtract(new Vector(-circle.getRadius(), -circle.getRadius())),
-                circle.getRadius(), circle.getRadius());
+    public static Rectangle encapsulateCircle(Circle circle) {
+        double r = circle.getRadius();
+        Vector c = circle.getCentre();
+        return new Rectangle(c.subtract(new Vector(-r, -r)), r, r);
+    }
+
+    /**
+     * Creates a rectangle that encapsulates a circle.
+     * @param triangle        the triangle to encapsulate
+     */
+    public static Rectangle encapsulateTriangle(Triangle triangle) {
+        List<Vector> vectors = new ArrayList<>();
+        vectors.add(triangle.getCornerA());
+        vectors.add(triangle.getCornerB());
+        vectors.add(triangle.getCornerC());
+        return encapsulateVectors(vectors);
     }
 
     /**
@@ -64,7 +77,7 @@ public class Rectangle {
      * @param vectors       the list of vectors to contain
      * @return              a new nl.pluizer.math2d.Rectangle that contains those vectors
      */
-    static Rectangle contain(List<Vector> vectors) {
+    public static Rectangle encapsulateVectors(List<Vector> vectors) {
         if (vectors.size() <= 2) {
             throw new RuntimeException("Need at least two vectors.");
         }
@@ -113,7 +126,8 @@ public class Rectangle {
      * Returns the total width of this rectangle.
      * @return              the width of this rectangle
      */
-    public double width() {
+    @Override
+    public double getWidth() {
         return Math.abs(left - right);
     }
 
@@ -121,7 +135,8 @@ public class Rectangle {
      * Returns the total height of this rectangle.
      * @return              the height of this rectangle
      */
-    public double height() {
+    @Override
+    public double getHeight() {
         return Math.abs(top - bottom);
     }
 
@@ -166,7 +181,7 @@ public class Rectangle {
      * @return              true of circle lies inside, false otherwise
      */
     public boolean contains(Circle circle) {
-        return contains(new Rectangle(circle));
+        return contains(encapsulateCircle(circle));
     }
 
     /**
@@ -192,7 +207,7 @@ public class Rectangle {
         List<Vector> vectorsCopy = new ArrayList<>(vectors);
         vectors.add(getTopLeft());
         vectors.add(getBottomRight());
-        return contain(vectorsCopy);
+        return encapsulateVectors(vectorsCopy);
     }
 
     /**

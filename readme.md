@@ -4,7 +4,7 @@ A handy linear algebra toolbox for Java. Useful for 2d physics, graphics, games 
 
 - Version: 0.1
 - Author: Richard van Roy (pluizer)
-- Project: [https://github.com/pluizer/math-2d]
+- Project: <https://github.com/pluizer/math-2d>
 - License: [http://opensource.org/licenses/MIT](MIT)
 
 This library is a still unfinished port of my [Chicken Scheme](http://www.call-cc.org/) _egg_ [2d-primitives](https://github.com/pluizer/2d-primitives). 

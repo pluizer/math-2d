@@ -1,6 +1,6 @@
 # Math 2d
 
-A handy linear algebra toolbox for Java. Useful for 2d physics, graphics, games etc.
+A handy immutable linear algebra toolbox for Java. Useful for 2d physics, graphics, games etc.
 
 - Version: 0.1
 - Author: Richard van Roy (pluizer)

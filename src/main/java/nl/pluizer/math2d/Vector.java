@@ -8,7 +8,7 @@ package nl.pluizer.math2d;
  */
 public class Vector implements Comparable<Vector> {
 
-    private double x, y;
+    final private double x, y;
 
     /**
      * Creates a zero-length vector.

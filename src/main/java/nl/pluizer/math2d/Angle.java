@@ -8,7 +8,7 @@ package nl.pluizer.math2d;
  */
 public class Angle implements Comparable<Angle>{
 
-    private double radian, degree;
+    final private double radian, degree;
 
     private Angle(double radian) {
         this.radian = radian;

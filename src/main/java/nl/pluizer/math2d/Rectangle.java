@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Rectangle implements Shape {
 
-    private double left, right, bottom, top;
+    final private double left, right, bottom, top;
 
     private Rectangle(double left, double right, double bottom, double top) {
         this.left = left;

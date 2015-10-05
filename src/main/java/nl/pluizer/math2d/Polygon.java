@@ -10,7 +10,7 @@ import java.util.*;
  */
 public class Polygon {
 
-    private List<Vector> vectors;
+    final private List<Vector> vectors;
 
     /**
      * Creates a new polygon from a rectangle.

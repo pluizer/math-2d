@@ -7,9 +7,9 @@ package nl.pluizer.math2d;
  */
 public class Circle implements Shape {
 
-    private Vector centre;
+    final private Vector centre;
 
-    private double radius;
+    final private double radius;
 
     /**
      * Returns a circle with centred around a centre width a

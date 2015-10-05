@@ -7,7 +7,7 @@ package nl.pluizer.math2d;
  */
 public class Triangle implements Shape {
 
-    private Vector cornerA, cornerB, cornerC;
+    final private Vector cornerA, cornerB, cornerC;
 
     /**
      * Create a triangle from 3 vectors.

@@ -19,4 +19,3 @@ All features provided by 2d-primitives will be available in due time. At the tim
 
 Be sure to check out the [documentation](https://freeshell.de/~pluizer/javadoc/nl/pluizer/math2d/package-summary.html) for more information.
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pluizer/math-2d/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
